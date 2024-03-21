@@ -1,0 +1,79 @@
+SELECT
+  title,
+  rental_rate
+FROM
+  film
+WHERE
+  rental_rate = 0.99 OR
+  rental_rate = 2.99;
+
+ SELECT
+  title,
+  rental_rate
+FROM
+  film
+WHERE
+  rental_rate in (0.99, 2.99);
+ 
+ SELECT
+  film_id,
+  title
+FROM
+  film
+WHERE
+  film_id IN (1, 2, 3);
+
+ SELECT
+  payment_id,
+  amount,
+  payment_date
+FROM
+  payment
+WHERE
+  payment_date::date IN ('2007-02-15', '2007-02-16');
+ 
+ SELECT
+  payment_id,
+  amount
+FROM
+  payment
+WHERE
+  payment_id NOT BETWEEN 17503 AND 17505
+ORDER BY
+  payment_id;
+ 
+ SELECT
+  payment_id,
+  amount,
+  payment_date
+FROM
+  payment
+WHERE
+  payment_date BETWEEN '2007-02-15' AND '2007-02-20'
+  AND amount > 10
+ORDER BY
+  payment_date;
+
+SELECT
+  address,
+  address2
+FROM
+  address
+WHERE
+  address2 IS NULL;
+ 
+ SELECT
+  address,
+  address2
+FROM
+  address
+WHERE
+  address2 IS NOT NULL;
+ 
+ 
+
+--1
+select rental_rate from film where rental_rate >= 2.99; 
+
+SELECT title, description FROM film
+WHERE lower(description) LIKE '%china%';
